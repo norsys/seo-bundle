@@ -1,0 +1,46 @@
+imports:
+    - { resource: actions.yml }
+
+parameters:
+    norsys_seo.event_listener.url_rewrite.class: Norsys\SeoBundle\EventListener\UrlRewriteListener
+    norsys_seo.twig.extension.seo.class: Norsys\SeoBundle\Twig\Extension\SeoExtension
+
+    norsys_seo.configurable_translator.class: Norsys\SeoBundle\Services\Translator\ConfigurableTranslator
+    norsys_seo.tag_builder.class: Norsys\SeoBundle\Services\TagBuilder\TagBuilder
+    norsys_seo.translated_tag_builder.class: Norsys\SeoBundle\Services\TagBuilder\TranslatedTagBuilder
+
+services:
+    norsys_seo.event_listener.url_rewrite:
+        class: '%norsys_seo.event_listener.url_rewrite.class%'
+        arguments:
+            - '%norsys.seo.rewrite.remove_trailing_slash%'
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequestRemoveTrailingSlash, priority: 254  }
+
+    norsys_seo.twig.extension.seo:
+        class: '%norsys_seo.twig.extension.seo.class%'
+        arguments:
+            - '%norsys.seo.metas%'
+            - '%norsys.seo.title%'
+            - '%norsys.seo.links%'
+            - '@norsys_seo.translated_tag_builder'
+        calls:
+            - [ setTranslator, [ '@?translator.default' ] ]
+        tags:
+            - { name: twig.extension }
+
+    norsys_seo.configurable_translator:
+        class: '%norsys_seo.configurable_translator.class%'
+        arguments:
+            - '@?translator.default'
+            - '%norsys.seo.translation.enabled%'
+            - '%norsys.seo.translation.default_domain%'
+
+    norsys_seo.tag_builder:
+        class: '%norsys_seo.tag_builder.class%'
+
+    norsys_seo.translated_tag_builder:
+        class: '%norsys_seo.translated_tag_builder.class%'
+        arguments:
+            - '@norsys_seo.tag_builder'
+            - '@norsys_seo.configurable_translator'

@@ -1,0 +1,4 @@
+norsys_seo_sitemap:
+    path: /sitemap.xml
+    defaults:
+        _controller: norsys_seo.action.sitemap
