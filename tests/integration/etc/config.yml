@@ -1,0 +1,33 @@
+framework:
+    translator:      { fallbacks: ["en"] }
+    secret:          "secret"
+    templating:
+        engines: ['twig']
+    assets:
+        enabled: false
+
+norsys_seo:
+    translation:
+        enabled: true
+        domain: seo
+    metas:
+        defaults:
+            - { charset: UTF-8 }
+            - { name: description, content: defaults.description }
+            - { name: viewport, content: 'width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0' }
+        pages:
+            home:
+                - { name: description, content: home.description }
+            empty:
+                - { name: description, content: ~ }
+    title:
+        default: defaults.title
+        pages:
+            home: home.title
+
+    links:
+        pages:
+            defaults:
+                - { rel: shortcut icon, href: /favicon.ico, type: image/x-icon }
+            home:
+                - { rel: alternate, href: http://super-site.fr/, hreflang: fr-fr }

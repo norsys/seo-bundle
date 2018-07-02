@@ -1,0 +1,8 @@
+my_page:
+    content:
+        description: My translated description
+defaults:
+    title: My super web site
+home:
+    description: Home page of my super web site
+    title: Home | My super web site

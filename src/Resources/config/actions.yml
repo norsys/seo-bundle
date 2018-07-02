@@ -1,0 +1,9 @@
+parameters:
+    norsys_seo.action.sitemap.class: Norsys\SeoBundle\Action\Sitemap
+
+services:
+    norsys_seo.action.sitemap:
+        class: '%norsys_seo.action.sitemap.class%'
+        arguments:
+            - '@router'
+            - '@templating.engine.twig'

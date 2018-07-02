@@ -1,0 +1,44 @@
+{
+    "name": "norsys/seo-bundle",
+    "description": "Handle SEO metatags config & rendering",
+    "type": "symfony-bundle",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Cedric Vanet",
+            "email": "cvanet@norsys.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Norsys\\SeoBundle\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Norsys\\SeoBundle\\Tests\\Units\\": "tests/units/src",
+            "Norsys\\SeoBundle\\Tests\\Integration\\": "tests/integration/src"
+        }
+    },
+    "require": {
+        "php": ">=7.0.0",
+        "twig/twig": "^2.0.0",
+        "symfony/config": "^3.1.0",
+        "symfony/http-kernel": "^3.1.0",
+        "symfony/framework-bundle": "^3.1.0",
+        "symfony/dependency-injection": "^3.1.0",
+        "symfony/templating": "^3.1.0",
+        "symfony/expression-language": "^3.1.0",
+        "symfony/translation": "^3.1.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^2.6",
+        "atoum/atoum": "~3.0",
+        "atoum/stubs": "~2.5",
+        "atoum/bdd-extension": "~2.1",
+        "symfony/yaml": "^3.3",
+        "symfony/twig-bundle": "^3.3",
+        "norsys/rothenberg": "dev-master",
+        "norsys/php-coding-standard": "~1.0"
+    }
+}
