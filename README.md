@@ -1,5 +1,11 @@
 # Norsys Seo Bundle
 
+[![Package version](https://img.shields.io/packagist/v/norsys/seo-bundle.svg?style=flat-square)](https://packagist.org/packages/norsys/seo-bundle)
+[![Total Downloads](https://img.shields.io/packagist/dt/norsys/seo-bundle.svg?style=flat-square)](https://packagist.org/packages/norsys/seo-bundle)
+[![Build Status](https://img.shields.io/travis/M6Web/ApiExceptionBundle/master.svg?style=flat-square)](https://travis-ci.org/M6Web/ApiExceptionBundle)
+[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/norsys/seo-bundle.svg?style=flat-square)](https://scrutinizer-ci.com/g/norsys/seo-bundle/?branch=master)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/norsys/seo-bundle.svg?style=flat-square)](https://scrutinizer-ci.com/g/norsys/seo-bundle/?branch=master)
+
 This project is a bundle to handle SEO meta/link tags configuration & rendering
 
 
