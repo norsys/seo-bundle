@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Norsys\SeoBundle\Tests\Integration;
 
@@ -13,20 +13,31 @@ use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 use Symfony\Component\HttpKernel\Kernel as BaseKernel;
 use Symfony\Component\Routing\RouteCollectionBuilder;
 
+/**
+ * Class Kernel
+ *
+ * @package Norsys\SeoBundle\Tests\Integration
+ */
 class Kernel extends BaseKernel
 {
     use MicroKernelTrait;
 
     /**
-     * @var string
+     * @var string $varPath
      */
     private $varPath;
 
-    public function __construct($environment, $debug)
+    /**
+     * Kernel constructor.
+     *
+     * @param string  $environment
+     * @param boolean $debug
+     */
+    public function __construct(string $environment, bool $debug)
     {
         parent::__construct($environment, $debug);
-        $this->rootDir = __DIR__ . '/../app/';
-        $this->varPath = __DIR__ . '/../var/';
+        $this->rootDir = __DIR__.'/../app/';
+        $this->varPath = __DIR__.'/../var/';
     }
 
     /**
@@ -39,7 +50,7 @@ class Kernel extends BaseKernel
         return [
             new FrameworkBundle(),
             new TwigBundle(),
-            new NorsysSeoBundle()
+            new NorsysSeoBundle(),
         ];
     }
 
@@ -50,10 +61,12 @@ class Kernel extends BaseKernel
      *     $routes->add('/admin', 'AppBundle:Admin:dashboard', 'admin_dashboard');
      *
      * @param RouteCollectionBuilder $routes
+     *
+     * @throws \Symfony\Component\Config\Exception\FileLoaderLoadException
      */
     protected function configureRoutes(RouteCollectionBuilder $routes)
     {
-        $routes->import($this->getProjectDir() . '/src/Resources/config/routing.yml');
+        $routes->import($this->getProjectDir().'/src/Resources/config/routing.yml');
     }
 
     /**
@@ -75,20 +88,28 @@ class Kernel extends BaseKernel
      *
      * @param ContainerBuilder $c
      * @param LoaderInterface  $loader
+     *
+     * @throws \Exception
      */
     protected function configureContainer(ContainerBuilder $c, LoaderInterface $loader)
     {
-        $loader->load(__DIR__ . '/../etc/config.yml');
-        $loader->load($this->getProjectDir() . '/src/Resources/config/services.yml');
+        $loader->load(__DIR__.'/../etc/config.yml');
+        $loader->load($this->getProjectDir().'/src/Resources/config/services.yml');
     }
 
+    /**
+     * @return string
+     */
     public function getLogDir()
     {
-        return $this->varPath . '/logs';
+        return $this->varPath.'/logs';
     }
 
+    /**
+     * @return string
+     */
     public function getCacheDir()
     {
-        return $this->varPath . '/cache';
+        return $this->varPath.'/cache';
     }
 }

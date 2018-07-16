@@ -3,8 +3,6 @@ declare(strict_types = 1);
 
 namespace Norsys\SeoBundle\Tests\Units\Services\TagBuilder;
 
-require __DIR__ . '/../../../runner.php';
-
 use Norsys\SeoBundle\Services\TagBuilder\TagInterface;
 use Norsys\SeoBundle\Tests\Units\Test;
 

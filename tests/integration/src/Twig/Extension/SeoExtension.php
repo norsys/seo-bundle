@@ -8,8 +8,16 @@ require __DIR__ . '/../../../runner.php';
 use Norsys\SeoBundle\Tests\Integration\IntegrationTest;
 use Norsys\SeoBundle\Tests\Integration\Kernel;
 
+/**
+ * Class SeoExtension
+ *
+ * @package Norsys\SeoBundle\Tests\Integration\Twig\Extension
+ */
 class SeoExtension extends IntegrationTest
 {
+    /**
+     * TestMetaTagsWithDefaultData
+     */
     public function testMetaTagsWithDefaultData()
     {
         $this
@@ -22,10 +30,12 @@ class SeoExtension extends IntegrationTest
             ->if($tags = $instance->renderMetaTags('defaults'))
             ->then
                 ->string($tags)
-                    ->isEqualTo($results)
-        ;
+                    ->isEqualTo($results);
     }
 
+    /**
+     * TestMetaTagsWithRoute
+     */
     public function testMetaTagsWithRoute()
     {
         $this
@@ -38,10 +48,12 @@ class SeoExtension extends IntegrationTest
             ->if($tags = $instance->renderMetaTags('home'))
             ->then
                 ->string($tags)
-                    ->isEqualTo($results)
-        ;
+                    ->isEqualTo($results);
     }
 
+    /**
+     * TestMetaTagsWithNullDescription
+     */
     public function testMetaTagsWithNullDescription()
     {
         $this
@@ -53,10 +65,12 @@ class SeoExtension extends IntegrationTest
             ->if($tags = $instance->renderMetaTags('empty'))
             ->then
                 ->string($tags)
-                    ->isEqualTo($results)
-        ;
+                    ->isEqualTo($results);
     }
 
+    /**
+     * TestLinkTagsWithDefaultData
+     */
     public function testLinkTagsWithDefaultData()
     {
         $this
@@ -67,10 +81,12 @@ class SeoExtension extends IntegrationTest
             ->if($tags = $instance->renderLinkTags('defaults'))
             ->then
                 ->string($tags)
-                    ->isEqualTo($results)
-        ;
+                    ->isEqualTo($results);
     }
 
+    /**
+     * TestLinkTagsWithRoute
+     */
     public function testLinkTagsWithRoute()
     {
         $this
@@ -81,10 +97,12 @@ class SeoExtension extends IntegrationTest
             ->if($tags = $instance->renderLinkTags('home'))
             ->then
                 ->string($tags)
-                    ->isEqualTo($results)
-        ;
+                    ->isEqualTo($results);
     }
 
+    /**
+     * TestTitleTagsWithDefaultData
+     */
     public function testTitleTagsWithDefaultData()
     {
         $this
@@ -95,10 +113,12 @@ class SeoExtension extends IntegrationTest
             ->if($tag = $instance->renderTitleTag('defaults'))
             ->then
                 ->string($tag)
-                    ->isEqualTo($results)
-        ;
+                    ->isEqualTo($results);
     }
 
+    /**
+     * TestTitleTagsWithRoute
+     */
     public function testTitleTagsWithRoute()
     {
         $this
@@ -106,13 +126,17 @@ class SeoExtension extends IntegrationTest
                 $instance = $this->createNewTestedInstance(),
                 $results = '<title>Home | My super web site</title>'
             )
-            ->if($tag = $instance->renderTitleTag('home'))
+        ->if($tag = $instance->renderTitleTag('home'))
             ->then
                 ->string($tag)
-                    ->isEqualTo($results)
-        ;
+                    ->isEqualTo($results);
     }
 
+    /**
+     * CreateNewTestedInstance
+     *
+     * @return object
+     */
     private function createNewTestedInstance()
     {
         $kernel = new Kernel('test', true);

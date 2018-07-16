@@ -10,8 +10,24 @@ use mageekguy\atoum\analyzer;
 use mageekguy\atoum\test;
 use mageekguy\atoum\tools;
 
+/**
+ * Class IntegrationTest
+ *
+ * @package Norsys\SeoBundle\Tests\Integration
+ */
 class IntegrationTest extends atoum
 {
+    /**
+     * IntegrationTest constructor.
+     *
+     * @param adapter|null                 $adapter
+     * @param annotations\extractor|null   $annotationExtractor
+     * @param asserter\generator|null      $asserterGenerator
+     * @param test\assertion\manager|null  $assertionManager
+     * @param \closure|null                $reflectionClassFactory
+     * @param \closure|null                $phpExtensionFactory
+     * @param tools\variable\analyzer|null $analyzer
+     */
     public function __construct(
         adapter $adapter = null,
         annotations\extractor $annotationExtractor = null,
@@ -33,6 +49,12 @@ class IntegrationTest extends atoum
         $this->setTestNamespace('#(?:^|\\\)tests?\\\integration?\\\#i');
     }
 
+    /**
+     * @param string  $environment
+     * @param boolean $debug
+     *
+     * @return Kernel
+     */
     protected function createAndBootKernel(string $environment = 'test', bool $debug = true)
     {
         $kernel = new Kernel($environment, $debug);
