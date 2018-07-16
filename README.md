@@ -5,9 +5,11 @@
 [![Build Status](https://img.shields.io/travis/M6Web/ApiExceptionBundle/master.svg?style=flat-square)](https://travis-ci.org/M6Web/ApiExceptionBundle)
 [![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/norsys/seo-bundle.svg?style=flat-square)](https://scrutinizer-ci.com/g/norsys/seo-bundle/?branch=master)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/norsys/seo-bundle.svg?style=flat-square)](https://scrutinizer-ci.com/g/norsys/seo-bundle/?branch=master)
+[![License](https://img.shields.io/packagist/l/norsys/seo-bundle.svg?style=flat-square)](https://packagist.org/packages/norsys/seo-bundle)
+
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/1d0aa782-e0ee-4702-a0b2-6564e5b16e1a/big.png)](https://insight.sensiolabs.com/projects/1d0aa782-e0ee-4702-a0b2-6564e5b16e1a)
 
 This project is a bundle to handle SEO meta/link tags configuration & rendering
-
 
 Installation
 ============

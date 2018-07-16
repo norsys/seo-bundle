@@ -12,10 +12,9 @@ install:
 
 script:
     - vendor/bin/phpcs --encoding=UTF-8 --ignore=.css --ignore=.scss --ignore=.js --standard=./check-style.xml ./src
-    - vendor/bin/phpcs --encoding=UTF-8 --ignore=.css --ignore=.scss --ignore=.js --standard=./check-style-tests.xml ./tests
+    - vendor/bin/phpcs --encoding=UTF-8 --ignore=.css --ignore=.scss --ignore=.js --ignore='./integration/var/cache/*' --standard=./check-style-tests.xml ./tests
     - vendor/bin/atoum
 
 after_script:
     - wget https://scrutinizer-ci.com/ocular.phar
     - php ocular.phar code-coverage:upload --format=php-clover clover.xml
-
