@@ -2,7 +2,7 @@
     "name": "norsys/seo-bundle",
     "description": "Handle SEO metatags config & rendering",
     "type": "symfony-bundle",
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
             "name": "Cedric Vanet",
