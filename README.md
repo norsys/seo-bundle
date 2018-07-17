@@ -1,4 +1,4 @@
-# Norsys Seo Bundle
+# Seo Bundle
 
 [![Package version](https://img.shields.io/packagist/v/norsys/seo-bundle.svg?style=flat-square)](https://packagist.org/packages/norsys/seo-bundle)
 [![Total Downloads](https://img.shields.io/packagist/dt/norsys/seo-bundle.svg?style=flat-square)](https://packagist.org/packages/norsys/seo-bundle)
